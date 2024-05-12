@@ -33,6 +33,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install build
         pip install bump2version
+    - name: Config Git Identity
+      run: |
+        git config --local user.email "github-actions@github.com"
+        git config --local user.name "GitHub Actions"
     - name: Bump version and commit changes
       run: bump2version patch --config-file .bumpversion.cfg
       env:
