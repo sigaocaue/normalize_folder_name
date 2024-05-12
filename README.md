@@ -11,7 +11,7 @@ Esta ferramenta converte strings de entrada para um formato padronizado, substit
 Você pode instalar o **Normalize Folder Name CLI** diretamente via PyPI:
 
 ```bash
-pip install @sigaocaue/normalize-folder-name
+pip install sigaocaue-normalize-folder-name
 ```
 ## Uso
 Para usar a ferramenta, execute o comando a seguir no seu terminal:
