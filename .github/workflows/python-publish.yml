@@ -23,6 +23,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
@@ -31,6 +32,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install build
+        pip install bump2version
+    - name: Bump version and commit changes
+      run: bump2version patch --config-file .bumpversion.cfg
+      env:
+        GIT_COMMITTER_NAME: github-actions
+        GIT_COMMITTER_EMAIL: github-actions@github.com
     - name: Build package
       run: python -m build
     - name: Publish package
